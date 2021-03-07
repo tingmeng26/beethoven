@@ -33,15 +33,15 @@ return [
     //Default configuration
     'mysql' => [
       'read' => [
-        'host' => $HS_read
+        'host' => 'localhost'
       ],
       'write' => [
-        'host' => $HS
+        'host' => 'localhost'
       ],
       'driver'    => 'mysql',
-      'database'  => $DB,
-      'username'  => $ID,
-      'password'  => $PW,
+      'database'  => env('DB_NAME'),
+      'username'  => env('DB_USERNAME'),
+      'password'  => env('DB_PASSWORD'),
       'charset'   => 'utf8',
       'collation' => 'utf8_unicode_ci',
       'prefix'    => '',

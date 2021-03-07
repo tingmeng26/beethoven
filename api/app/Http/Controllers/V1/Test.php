@@ -5,6 +5,7 @@ namespace App\Http\Controllers\V1;
 use \App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Exceptions\CustomException;
+use App\Jobs\TestJob;
 use App\Model as WebModel;
 use App\Model\Member;
 use App\Model\School;
@@ -120,5 +121,10 @@ class Test extends Controller
   public function testRedis()
   {
     return $this->returndata(['data' => $this->isRedisConnect]);
+  }
+
+  public function testQueue(){
+    dispatch(new TestJob('hi i am mark'));
+    return $this->success();
   }
 }

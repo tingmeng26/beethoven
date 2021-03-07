@@ -18,6 +18,7 @@ $api->version('v1', ['namespace' => 'App\Http\Controllers\V1'], function ($api) 
   // $api->get('huge','Test@huge');
   // 測試 redis 連線情況
   $api->get('testRedis', 'Test@testRedis');
+  $api->get('testQueue', 'Test@testQueue');
   // 取得縣市
   $api->get('city', 'Member@getCity');
   // 取得學校
